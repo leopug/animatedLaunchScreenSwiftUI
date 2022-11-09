@@ -1,12 +1,13 @@
 import SwiftUI
 
-struct LaunchScreenView: View {
+public struct LaunchScreenView: View {
     @EnvironmentObject private var launchScreenState: LaunchScreenStateManager
 
     @State private var firstAnimation = false
     @State private var secondAnimation = false
     @State private var startFadeoutAnimation = false
     
+    public init() {}
     
     @ViewBuilder
     private var image: some View {
@@ -28,7 +29,7 @@ struct LaunchScreenView: View {
         .publish(every: 0.5, on: .current, in: .common)
         .autoconnect()
     
-    var body: some View {
+    public var body: some View {
         ZStack {
             backgroundColor
             image
@@ -54,7 +55,6 @@ struct LaunchScreenView: View {
             break
         }
     }
-    
 }
 
 struct LaunchScreenView_Previews: PreviewProvider {

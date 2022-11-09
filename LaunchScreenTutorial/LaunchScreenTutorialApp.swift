@@ -1,4 +1,6 @@
 import SwiftUI
+import LaunchScreenKit
+import MainAppKit
 
 @main
 struct LaunchScreenTutorialApp: App {

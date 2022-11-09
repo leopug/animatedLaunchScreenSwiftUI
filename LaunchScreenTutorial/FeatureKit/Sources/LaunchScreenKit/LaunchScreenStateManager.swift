@@ -1,12 +1,14 @@
 import Foundation
 
-final class LaunchScreenStateManager: ObservableObject {
+public final class LaunchScreenStateManager: ObservableObject {
     
     @MainActor
-    @Published private(set) var state: LaunchScreenStep = .firstStep
+    @Published public var state: LaunchScreenStep = .firstStep
+    
+    public init() {}
     
     @MainActor
-    func dismiss() {
+    public func dismiss() {
         state = .secondStep
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
